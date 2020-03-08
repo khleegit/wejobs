@@ -9,8 +9,10 @@ body {
 
 .page-header {
     background-color: #ff9400;
+    /* background-image: url('happyfamily.jpg'); */
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    /* height: 1000px; */
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
