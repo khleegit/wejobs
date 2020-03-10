@@ -8,7 +8,7 @@ body {
 }
 
 .page-header {
-    background-color: #ff9400;
+    background-color: #80e5ff;
     /* background-image: url('happyfamily.jpg'); */
     margin-top: 0;
     padding: 20px 20px 20px 40px;
@@ -55,3 +55,18 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
     color: #000000;
 }
+
+
+
+div.aliceblue {
+  background-color: #F0F8FF;
+  margin: 10px;
+  font-size: 16pt;
+}
+
+div.azure {
+  background-color: #F0FFFF;
+  margin: 10px;
+  font-size: 16pt;
+}
+

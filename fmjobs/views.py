@@ -4,6 +4,7 @@ from .models import Post
 from .forms import PostForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import auth
 # Create your views here.
 
 
@@ -11,8 +12,33 @@ def post_blank(request):
     return render(request, 'fmjobs/post_blank.html', {})
 
 def login(request):
+        if request.method == "POST":
+            username = request.POST['username']
+            password = request.POST['password']
+            user = auth.authenticate(request, username = username, password = password)
+            if user is not None:
+                auth.login(request, user)
+                return redirect('post_list')
+            else:
+                return render(request, 'fmjobs/login.html',{'error' : 'username or password is incorrect'})
+        else:
+            return render(request, 'fmjobs/login.html')
     
-    return render(request, 'registration/login.html', {})
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
+
+def home(request):
+    return render(request, 'fmjobs/home.html', {})
+
+def webfiction(request):
+    return render(request, 'fmjobs/webfiction.html', {})
+
+def uncapitalizedstartup(request):
+    return render(request, 'fmjobs/uncapitalizedstartup.html', {})
+
+def digitalnomad(request):
+    return render(request, 'fmjobs/digitalnomad.html', {})
 
 @login_required
 def post_list(request):
