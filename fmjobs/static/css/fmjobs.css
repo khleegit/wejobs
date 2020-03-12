@@ -89,6 +89,15 @@ div.title {
     margin-bottom: 30px;
 }
 
+.divcenter {
+    display: table;
+}
+
+.lowerdivcenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
 
 .txtcenter {
     text-align: center;
@@ -108,3 +117,15 @@ div.title {
     margin:0 auto;
 }
 
+div.login {
+    margin-top: 200px;
+}
+
+div.alignout {
+    width: 100%;
+    text-align: center;
+}
+
+div.alignin {
+    display: inline-block;
+}

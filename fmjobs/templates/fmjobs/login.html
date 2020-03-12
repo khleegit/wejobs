@@ -1,11 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Family Jobs</title>        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/fmjobs.css' %}"/>
     </head>
     <body>
         <div class="container">
-            <div class="tcenter">
-                <h1>LOGIN</h1>
+            <div class="txtcenter darkorange login">
+                <br>
+                <h1 >LOGIN</h1>
                 
                 <form method = "POST" action="{% url 'login' %}">
                     {% csrf_token %}
@@ -13,11 +19,14 @@
                     <br>
                     <input name="username" type="text">
                     <br>
+                    <br>
                     Password:
                     <br>
                     <input name="password" type="password">
                     <br><br>
                     <input type="submit" class="btn btn-primary" value="로그인">
+                    <br>
+                    <br>
                 </form>
             </div>
         </div>
