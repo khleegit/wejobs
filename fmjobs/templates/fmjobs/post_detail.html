@@ -11,7 +11,59 @@
              <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
              <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div class="title">
+            <h1 class="txtcenter">{{ post.title }}</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="azure">
+                    <a href="{{ post.link1|linebreaksbr }}">{{ post.link1title }}</a>
+                </div>
+                <div class="aliceblue">
+                    <a href="{{ post.link2|linebreaksbr }}">{{ post.link2title }}</a>
+                </div>
+                <div class="azure">
+                    <a href="{{ post.link3|linebreaksbr }}">{{ post.link3title }}</a>
+                </div>
+                <div class="aliceblue">
+                    <a href="{{ post.link4|linebreaksbr }}">{{ post.link4title }}</a>
+                </div>
+                <div class="azure">
+                    <a href="{{ post.link5|linebreaksbr }}">{{ post.link5title }}</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        </div>
+        
+        
+        <div class="col-md-12 darkgoldenrod">
+            <h3 class="fleft">월 예상 수입</h3>
+            <h3 class="fleft">{{ post.monthlyincome }}</h3>
+        </div>
+        
+        <div class="col-md-12">
+            <h3>수입 발생을 위한 업무 내역 및 기간 </h3>
+            <p>{{ post.profitperiod|linebreaksbr }}</p>
+        </div>
+        
+        <div class ="row">
+            <div class="col-md-6">
+                <div class="darkorange txtcenter">
+                    <h3 >장점</h3>
+                </div>
+                <p>{{ post.advantage|linebreaksbr }}</p>
+            </div>
+            <div class="col-md-6">
+                <div class="darkorange txtcenter">
+                    <h3>단점</h3>
+                </div>
+                <p>{{ post.weakness|linebreaksbr }}</p>
+            </div>
+        </div>
+        
+        
+        
     </div>
 {% endblock %}

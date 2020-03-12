@@ -8,7 +8,7 @@ body {
 }
 
 .page-header {
-    background-color: #80e5ff;
+    background-color: #A52A2A;
     /* background-image: url('happyfamily.jpg'); */
     margin-top: 0;
     padding: 20px 20px 20px 40px;
@@ -16,7 +16,7 @@ body {
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 36pt;
     text-decoration: none;
 }
@@ -68,5 +68,43 @@ div.azure {
   background-color: #F0FFFF;
   margin: 10px;
   font-size: 16pt;
+}
+
+div.darkgoldenrod {
+    background-color: #B8860B;
+    margin: 10px;
+    font-size: 16pt;
+}
+
+div.darkorange {
+    background-color: #FF8C00;
+    margin: 10px;
+    font-size: 16pt;
+}
+
+div.title {
+    background-color : #D2691E;
+    margin: 10px;
+    font-size: 24pt;
+    margin-bottom: 30px;
+}
+
+
+.txtcenter {
+    text-align: center;
+}
+
+.fleft {
+    float:left;
+    margin: 10px;
+}
+
+.fright {
+    float:right;
+    margin: 10px;
+}
+
+.fcenter {
+    margin:0 auto;
 }
 
