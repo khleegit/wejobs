@@ -2,6 +2,7 @@ from django.shortcuts import render,  get_object_or_404
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from .models import Plan
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
@@ -28,17 +29,21 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
-def home(request):
-    return render(request, 'fmjobs/home.html', {})
+def weplan(request):
+    return render(request, 'fmjobs/weplan.html', {})
 
-def webfiction(request):
-    return render(request, 'fmjobs/webfiction.html', {})
+def dashboard(request):
+    return render(request, 'fmjobs/dashboard.html', {})
 
-def uncapitalizedstartup(request):
-    return render(request, 'fmjobs/uncapitalizedstartup.html', {})
+def targetregistration(request):
+    return render(request, 'fmjobs/targetregistration.html', {})
 
-def digitalnomad(request):
-    return render(request, 'fmjobs/digitalnomad.html', {})
+def targetsetting(request):
+    plans = Plan.objects.all()
+    return render(request, 'fmjobs/targetsetting.html', {'plans': plans})
+
+def affiliate(request):
+    return render(request, 'affiliate/index.html', {})
 
 @login_required
 def post_list(request):
@@ -80,3 +85,15 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
+
+def home(request):
+    return render(request, 'fmjobs/home.html', {})
+
+def webfiction(request):
+    return render(request, 'fmjobs/webfiction.html', {})
+
+def uncapitalizedstartup(request):
+    return render(request, 'fmjobs/uncapitalizedstartup.html', {})
+
+def digitalnomad(request):
+    return render(request, 'fmjobs/digitalnomad.html', {})

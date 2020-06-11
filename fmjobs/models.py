@@ -33,3 +33,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
+class Plan(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    planer = models.CharField(max_length=6)
+    classification = models.CharField(max_length=10)
+    category = models.CharField(max_length=30)
+    target_value = models.IntegerField()
+    unit = models.CharField(max_length=10)
+    created_date = models.DateTimeField(default=timezone.now)
+    modification_date = models.DateTimeField(blank=True, null=True)
+    
+    
+    #inspection_code = models.CharField(max_length=10, unique=True)
+    

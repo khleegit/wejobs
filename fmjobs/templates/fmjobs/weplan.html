@@ -1,0 +1,25 @@
+{% extends 'fmjobs/base.html' %}
+
+{% block content %}
+    <nav class="topnav">
+        <a href="{% url 'dashboard' %}">목표 달성 현황</a>
+        <a href="{% url 'targetregistration' %}">목표 실행 내용 등록</a>
+        <a href="{% url 'targetsetting' %}">목표 설정</a>
+        <div class="dropdown">
+            <a href="#" class="drop">기초</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content container">
+            <div class="row">
+                {% block incontent %}
+                {% endblock %}
+            </div>
+    </div>
+    
+
+{% endblock %}
