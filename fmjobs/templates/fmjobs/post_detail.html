@@ -8,8 +8,8 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-pen"></i></a>
+             <a class="btn btn-default" data-toggle="modal" href="#myModal"><i class="fas fa-trash"></i></a>
         {% endif %}
         <div class="title">
             <h1 class="txtcenter">{{ post.title }}</h1>
@@ -65,5 +65,31 @@
         
         
         
+        <!-- The Modal -->
+      <div class="modal fade " id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title" >삭제 경고창</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+              복구되지 않는데 정말 꼭 삭제 하시겠습니까?
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            	<button type="button" class="btn btn-danger fleft" data-dismiss="modal">취소</button>
+              	<button type="button" class="btn btn-danger" onclick = "location.href = '{% url 'post_remove' pk=post.pk %}' ">삭제</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
     </div>
 {% endblock %}

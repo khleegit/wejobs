@@ -9,3 +9,63 @@
                 <div class="col-sm-5">
                     <h1><a href="{% url 'home' %}">Home </a></h1> 
                 </div>
+                
+                
+    def __init__(self,*args,**kwargs):
+        super (CategorySaveForm,self ).__init__(*args,**kwargs)
+        self.fields['classification'].queryset = Classifications.objects.filter(classification=self.instance.classification)
+        
+        https://www.youtube.com/watch?v=4m39miuw5lE
+        
+        
+        'classification' : forms.TextInput(attrs = {'class': 'form-control col-12'}),
+        
+        
+        
+        unit = models.CharField(max_length=10)
+        time = models.IntegerField(null=True, blank=True)
+        numbers = models.IntegerField(null=True, blank=True)
+        unitquantity = models.IntegerField(null=True, blank=True)
+        
+        
+        
+        <select name = "분류" class = "form-control col-12">
+        	{% for cf in clfc %}
+            	<option value="{{cf.pk}}">{{cf.classification}}</option>
+        	{% endfor %}
+        </select>
+        <input type="text" class = "form-control col-12">
+        
+        
+        
+        https://stackoverflow.com/questions/8871637/django-form-unexpected-keyword-argument-queryset
+            
+        장고 foreign key 정참조
+        
+        https://wave1994.tistory.com/70
+        
+        modelform query
+        
+        
+        MultiModelForm
+        https://django-betterforms.readthedocs.io/en/latest/multiform.html
+        
+        장고 카테고리
+        https://chohyeonkeun.github.io/2019/06/13/190613-django-involved-category-function/
+        https://developer.mozilla.org/ko/docs/Learn/Server-side/Django/Models
+        https://chohyeonkeun.github.io/2019/06/13/190613-django-involved-category-function/
+        ef __str__(self):
+        """String for representing the Model object."""
+        return f'{self.id} ({self.book.title})'
+        
+        
+        
+        , id = "cfnumber", onChange = "setname();"
+        
+        django foreign key related_name
+        https://egg-money.tistory.com/220?category=811218
+        
+        장고 foreign key 이름표시 
+        https://newbiecs.tistory.com/251
+        
+        

@@ -35,16 +35,38 @@ class Post(models.Model):
         return self.title
     
     
+class Classifications(models.Model):
+    classification = models.CharField(max_length=10, null=False, blank=False)
+    
+    def __str__(self):
+        return self.classification
+    
+ #   author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+ #   published_date = models.DateTimeField(blank=True, null=True)
+    
+
+class Categorys(models.Model):
+    classification = models.ForeignKey(Classifications, on_delete=models.CASCADE)
+    category = models.CharField(max_length=30, null=False, blank=False)
+    
+    def __str__(self):
+        return self.category
+    
+  #  author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+  #  published_date = models.DateTimeField(blank=True, null=True)
+    
+'''    
 class Plan(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     planer = models.CharField(max_length=6)
-    classification = models.CharField(max_length=10)
-    category = models.CharField(max_length=30)
+    classification = models.ForeignKey(Classifications, on_delete=models.CASCADE)
+    category = models.ForeignKey(Categorys, on_delete=models.CASCADE)
     target_value = models.IntegerField()
     unit = models.CharField(max_length=10)
     created_date = models.DateTimeField(default=timezone.now)
     modification_date = models.DateTimeField(blank=True, null=True)
-    
-    
     #inspection_code = models.CharField(max_length=10, unique=True)
+''' 
+    
+
     

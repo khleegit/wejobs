@@ -1,31 +1,26 @@
 {% extends 'fmjobs/weplan.html' %}
 
 {% block incontent %}
-    <h1>targetsetting</h1>
-    <div class="container">
-        <table class="table table-striped">
-            <thead>
+    <h1>목표 리스트</h1>
+    <div>
+        <table id = "customers">
+            <tr>
+                <th>사용자</th>
+                <th>분류</th>
+                <th>항목</th>
+                <th>목표</th>
+                <th>단위</th>
+            </tr>
+            {% for plan in plans %}
                 <tr>
-                    <th>분류</th>
-                    <th>항목</th>
-                    <th>경호</th>
-                    <th>미선</th>
-                    <th>지은</th>
-                    <th>시은</th>
+                    <td>{{plan.planer}}</td>
+                    <td>{{plan.classification}}</td>
+                    <td>{{plan.category}}</td>
+                    <td>{{plan.target_value}}</td>
+                    <td>{{plan.unit}}</td>
+                        
                 </tr>
-            </thead>
-            <tbody>
-                {% for plan in plans %}
-                    <tr>
-                        <td>{{plan.planer}}</td>
-                        <td>{{plan.classification}}</td>
-                        <td>{{plan.category}}</td>
-                        <td>{{plan.target_value}}</td>
-                        <td>{{plan.unit}}</td>
-                            
-                    </tr>
-                {% endfor %}            
-            </tbody>        
+            {% endfor %}                   
         </table>
     </div>
     

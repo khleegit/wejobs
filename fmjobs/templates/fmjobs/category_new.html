@@ -1,0 +1,28 @@
+{% extends 'fmjobs/weplan.html' %}
+
+{% block incontent %}    
+    <br>
+    <div class = "container-fluid">
+        <div class = "row">
+            <h1 class = "fcenter">항목 신규 등록</h1>
+        </div>
+        <br>
+        
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class = "form-group col-4 bodycai">
+                <form method = "POST">
+                	{% csrf_token %}
+                	{{ form.as_p }}
+                    
+                	<div class="row justify-content-center">
+                    	<a href="{% url 'category' %}">
+                        	<input type="button" class="btn btn-warning" value="취소">
+                        </a>
+                    	<input type="submit" class="btn btn-success margin_left50" value="등록">
+                    </div>
+                </form>
+            </div>
+        </div>          
+    </div>     			
+
+{% endblock %}

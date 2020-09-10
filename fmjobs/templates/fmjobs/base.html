@@ -5,32 +5,44 @@
         <title>Family Jobs</title>        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/fmjobs.css' %}"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">        
+        <script src="{% static 'javascript/fmjobs.js' %}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/fmjobs.css' %}"/>
+        {% block headexpansion %}
+        {% endblock %}    
     </head>
     <body>
-        <div class="page-header">
-            <div class="row4">
-                <p class="normal1"><a href="{% url 'weplan' %}">목표 등록 및 실행</a></p>
-                <p class="normal1"><a href="{% url 'affiliate' %}">제휴 사이트</a></p>
-                <h1 class="txtcenter"><a href="{% url 'post_list' %}">Family Jobs </a></h1>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-                {% else %}
-                {% endif %}
-            </div>
-                        
-        </div>
-
-
-        <div class="content container">
-            <div class="row">
+        <div class = "container-fluid">
+            <nav class="navbar navbar-expand-sm navbar-dark navbar_color_custom" >
+              <ul class="navbar-nav font30 ">
+                <li class="nav-item active ">
+                  <a class="nav-link" href="{% url 'post_list' %}">Family Jobs</a>
+                </li>
+                <li class="nav-item margin_left50">
+                  <a class="nav-link" href="{% url 'weplan' %}">우리의 목표</a>
+                </li>
+                <li class="nav-item margin_left50">
+                  <a class="nav-link" href="{% url 'affiliate' %}">제휴 사이트</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav font30 ml-auto">
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'post_new' %}" class="nav-link"><i class="fas fa-plus"></i></a>
+                    {% else %}
+                    {% endif %}
+                </li>
+              </ul>
+            </nav>
+            
                 {% block content %}
                 {% endblock %}
-            </div>
+           
         </div>
+
     </body>
 </html>

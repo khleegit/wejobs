@@ -2,4 +2,12 @@
 
 {% block incontent %}
     <h1>targetregistration</h1>
-{% endblock %}
+    <label>분류</label>
+    <select name = "분류">
+        {% for plan in plans %}
+            <option>{{plan.classification}}</option>
+        {% endfor %}
+    </select>
+    <input type="text">
+        
+{% endblock %}  
